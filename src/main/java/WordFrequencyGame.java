@@ -37,7 +37,7 @@ public class WordFrequencyGame {
                         word -> word, word -> 1, Integer::sum));
         return wordsCounts.entrySet()
                 .stream()
-                .map(input -> new WordInfo(input.getKey(), input.getValue()))
+                .map(wordInfo -> new WordInfo(wordInfo.getKey(), wordInfo.getValue()))
                 .collect(Collectors.toList());
     }
 }
