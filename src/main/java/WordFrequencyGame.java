@@ -19,7 +19,7 @@ public class WordFrequencyGame {
     private StringJoiner getWordWithCount(List<WordInfo> wordInfoList) {
         StringJoiner allWordsWithCount = new StringJoiner("\n");
         for (WordInfo word : wordInfoList) {
-            String wordWithCount = word.getValue() + " " + word.getWordCount();
+            String wordWithCount = word.getWord() + " " + word.getWordCount();
             allWordsWithCount.add(wordWithCount);
         }
         return allWordsWithCount;
