@@ -10,11 +10,6 @@ public class WordFrequencyGame {
     public String getResult(String sentence){
 
 
-        if (sentence.split(BLANK_SPACE).length==1) {
-            return sentence + ADD_SPACE_AND_ONE;
-        } else {
-
-            
             try {
 
                 List<WordInfo> wordInfoList = calculateWordFrequency(sentence);
@@ -29,7 +24,6 @@ public class WordFrequencyGame {
                 return "Calculate Error";
             }
         }
-    }
 
     private StringJoiner getWordWithCount(List<WordInfo> wordInfoList) {
         StringJoiner allWordsWithCount = new StringJoiner("\n");
@@ -57,7 +51,5 @@ public class WordFrequencyGame {
                          .map(input -> new WordInfo(input.getKey(),input.getValue()))
                          .collect(Collectors.toList());
         }
-
-
 
 }
