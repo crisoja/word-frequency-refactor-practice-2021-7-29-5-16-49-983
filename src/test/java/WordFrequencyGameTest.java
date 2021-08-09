@@ -60,4 +60,5 @@ public class WordFrequencyGameTest {
         //Then
         assertThat(result).isEqualTo(expectResult);
     }
+
 }

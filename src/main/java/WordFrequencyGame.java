@@ -17,12 +17,12 @@ public class WordFrequencyGame {
             
             try {
 
-                List<Input> inputList = calculateWordFrequency(sentence);
+                List<WordInfo> wordInfoList = calculateWordFrequency(sentence);
 
-                inputList.sort((w1, w2) -> w2.getWordCount() - w1.getWordCount());
+               wordInfoList.sort((word1, word2) -> word2.getWordCount() - word1.getWordCount());
 
                 StringJoiner joiner = new StringJoiner("\n");
-                for (Input w : inputList) {
+                for (WordInfo w : wordInfoList) {
                     String s = w.getValue() + " " +w.getWordCount();
                     joiner.add(s);
                 }
@@ -37,7 +37,7 @@ public class WordFrequencyGame {
 
 
 
-    private List<Input> calculateWordFrequency(String sentence) {
+    private List<WordInfo> calculateWordFrequency(String sentence) {
         List<String> words = Arrays.asList(sentence.split(BLANK_SPACE));
 
         wordsCounts = words.parallelStream().
@@ -46,7 +46,7 @@ public class WordFrequencyGame {
 
             return wordsCounts.entrySet()
                          .stream()
-                         .map(input -> new Input(input.getKey(),input.getValue()))
+                         .map(input -> new WordInfo(input.getKey(),input.getValue()))
                          .collect(Collectors.toList());
         }
 
