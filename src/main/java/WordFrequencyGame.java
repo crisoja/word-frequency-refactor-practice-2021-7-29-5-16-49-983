@@ -10,15 +10,16 @@ import java.time.LocalDateTime;
 public class WordFrequencyGame {
 
     public static final String BLANK_SPACE = "\\s+";
+    public static final String ADD_SPACE_AND_ONE = " 1";
 
     public String getResult(String sentence){
 
 
         if (sentence.split(BLANK_SPACE).length==1) {
-            return sentence + " 1";
+            return sentence + ADD_SPACE_AND_ONE;
         } else {
 
-
+            
             try {
 
                 //split the input string with 1 to n pieces of spaces
