@@ -4,7 +4,6 @@ import java.util.stream.Collectors;
 public class WordFrequencyGame {
 
     private static final String BLANK_SPACE = "\\s+";
-    private static final String ADD_SPACE_AND_ONE = " 1";
     private Map<String, Integer> wordsCounts;
 
     public String getResult(String sentence) {
