@@ -39,7 +39,7 @@ public class WordFrequencyGame {
         return wordInfos.stream()
                 .distinct()
                 .map(wordInfo -> new WordInfo(wordInfo, Collections.frequency(wordInfos, wordInfo)))
-                .sorted((word1, word2) -> word2.getWordCount() - word1.getWordCount())
+                .sorted((wordInfo1, wordInfo2) -> wordInfo2.getWordCount() - wordInfo1.getWordCount())
                 .collect(Collectors.toList());
     }
 }
