@@ -4,7 +4,6 @@ import java.util.stream.Collectors;
 public class WordFrequencyGame {
 
     private static final String BLANK_SPACE = "\\s+";
-    private Map<String, Integer> wordsCounts;
 
     public String getResult(String sentence) {
         try {
@@ -30,7 +29,7 @@ public class WordFrequencyGame {
 
     private List<WordInfo> calculateWordFrequency(String sentence) {
         List<String> words = Arrays.asList(sentence.split(BLANK_SPACE));
-        wordsCounts = words.parallelStream().
+         Map<String, Integer> wordsCounts = words.parallelStream().
                 collect(Collectors.toConcurrentMap(
                         word -> word, word -> 1, Integer::sum));
         return wordsCounts.entrySet()
