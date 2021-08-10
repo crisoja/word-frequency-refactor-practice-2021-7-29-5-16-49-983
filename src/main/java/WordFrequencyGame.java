@@ -38,7 +38,7 @@ public class WordFrequencyGame {
         List<String> words = Arrays.asList(sentence.split(WHITE_SPACES));
         Map<String, Integer> wordInfos = words.parallelStream().
                 collect(Collectors.toConcurrentMap(
-                        word -> word, word -> 1, Integer::sum));
+                        wordInfo -> wordInfo, wordInfo -> 1, Integer::sum));
         return wordInfos.entrySet()
                 .stream()
                 .map(wordInfo -> new WordInfo(wordInfo.getKey(), wordInfo.getValue()))
