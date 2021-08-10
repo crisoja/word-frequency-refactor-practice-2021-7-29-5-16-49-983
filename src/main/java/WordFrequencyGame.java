@@ -6,6 +6,7 @@ public class WordFrequencyGame {
     private static final String WHITE_SPACES = "\\s+";
     public static final String CALCULATE_ERROR = "Calculate Error";
     public static final String NEW_LINE = "\n";
+    public static final String BLANK_SPACE = " ";
 
     public String getResult(String sentence) {
         try {
@@ -20,9 +21,13 @@ public class WordFrequencyGame {
     private String getWordWithCount(List<WordInfo> wordInfos) {
         StringJoiner allWordsWithCount = new StringJoiner(NEW_LINE);
         wordInfos.forEach(wordInfo -> {
-            allWordsWithCount.add(wordInfo.getWord() + " " + wordInfo.getWordCount());
+            allWordsWithCount.add(getWordsAndCount(wordInfo));
         });
         return allWordsWithCount.toString();
+    }
+
+    private String getWordsAndCount(WordInfo wordInfo) {
+        return wordInfo.getWord() + BLANK_SPACE + wordInfo.getWordCount();
     }
 
     private void sortWords(List<WordInfo> wordInfo) {
