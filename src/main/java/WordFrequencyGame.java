@@ -21,12 +21,12 @@ public class WordFrequencyGame {
     private String getWordWithCount(List<WordInfo> wordInfos) {
         StringJoiner allWordsWithCount = new StringJoiner(NEW_LINE);
         wordInfos.forEach(wordInfo -> {
-            allWordsWithCount.add(getWordsAndCount(wordInfo));
+            allWordsWithCount.add(getWordAndCount(wordInfo));
         });
         return allWordsWithCount.toString();
     }
 
-    private String getWordsAndCount(WordInfo wordInfo) {
+    private String getWordAndCount(WordInfo wordInfo) {
         return wordInfo.getWord() + BLANK_SPACE + wordInfo.getWordCount();
     }
 
