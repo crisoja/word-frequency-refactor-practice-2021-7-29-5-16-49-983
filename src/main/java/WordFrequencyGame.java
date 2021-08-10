@@ -10,9 +10,9 @@ public class WordFrequencyGame {
 
     public String getResult(String sentence) {
         try {
-            List<WordInfo> wordInfoList = calculateWordFrequency(sentence);
-            sortWords(wordInfoList);
-            return getWordWithCount(wordInfoList);
+            List<WordInfo> wordInfos = calculateWordFrequency(sentence);
+            sortWords(wordInfos);
+            return getWordWithCount(wordInfos);
         } catch (Exception e) {
             return CALCULATE_ERROR;
         }
