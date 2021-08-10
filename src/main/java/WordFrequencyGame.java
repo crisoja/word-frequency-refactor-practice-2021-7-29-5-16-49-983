@@ -4,6 +4,7 @@ import java.util.stream.Collectors;
 public class WordFrequencyGame {
 
     private static final String WHITE_SPACES = "\\s+";
+    public static final String CALCULATE_ERROR = "Calculate Error";
 
     public String getResult(String sentence) {
         try {
@@ -11,7 +12,7 @@ public class WordFrequencyGame {
             sortWords(wordInfoList);
             return getWordWithCount(wordInfoList);
         } catch (Exception e) {
-            return "Calculate Error";
+            return CALCULATE_ERROR;
         }
     }
 
