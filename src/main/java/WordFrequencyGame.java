@@ -36,7 +36,7 @@ public class WordFrequencyGame {
 
     private List<WordInfo> calculateWordFrequency(String sentence) {
         List<String> words = Arrays.asList(sentence.split(WHITE_SPACES));
-         Map<String, Integer> wordsCounts = words.parallelStream().
+        Map<String, Integer> wordsCounts = words.parallelStream().
                 collect(Collectors.toConcurrentMap(
                         word -> word, word -> 1, Integer::sum));
         return wordsCounts.entrySet()
