@@ -38,7 +38,7 @@ public class WordFrequencyGame {
         List<String> wordInfos = Arrays.asList(sentence.split(WHITE_SPACES));
         return wordInfos.stream()
                 .distinct()
-                .map(word -> new WordInfo(word, Collections.frequency(wordInfos, word)))
+                .map(wordInfo -> new WordInfo(wordInfo, Collections.frequency(wordInfos, wordInfo)))
                 .sorted((word1, word2) -> word2.getWordCount() - word1.getWordCount())
                 .collect(Collectors.toList());
     }
